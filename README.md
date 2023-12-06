@@ -34,27 +34,6 @@ sudo apt-get install python3 python3-pip
 pip3 install --user Flask==1.1.4 PyMySQL==1.0.2 cryptography==36.0.0 markupsafe==2.0.1
 ```
 
-# Configuração da BD
-
-Edite o ficheiro `db.py` no que se refere à configuração da sua BD, modificando os parâmetros `DB` (nome da base de dados), `USER` (nome do utilizador) e `PASSWORD` (senha do utilizador).
-
-Teste o acesso executando:
-
-```
-python3 test_db_connection.py NOME_DE_UMA_TABELA
-```
-
-Se a configuração do acesso à BD estiver correcto, deverá ser listado o conteúdo da tabela `NOME_DE_UMA_TABELA`, por ex. a tabela `PLATFORM` da BD MovieStream:
-
-```
-$ python3 test_db.py PLATFORM
-SELECT * FROM PLATFORM
-3 results ...
-{'id': 1, 'name': 'Windows'}
-{'id': 2, 'name': 'MacOS'}
-{'id': 3, 'name': 'Linux'}
-```
-
 # Execução
 
 Inicie a aplicação executando `python3 server.py` e interaja com a mesma
