@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+
+<body>
+  <main class="table" style="margin-top: 30%">
+    <style>
+      .table {
+        margin: 60px auto 25px auto !important;
+        position: relative !important;
+        width: fit-content !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+      }
+    </style>
+    <section class="table__header">
+      <h1 align="center">Genres List</h1>
+    </section>
+
+    <section class="table__body">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+
+        {% for genre in genres %}
+        <tbody>
+          <tr>
+            <td>
+              <a href="/genres/{{ genre.genre_id }}">{{ genre.genre_id }}</a>
+            </td>
+            <td>{{ genre.name }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </section>
+  </main>
+</body>
+{% endblock %}
