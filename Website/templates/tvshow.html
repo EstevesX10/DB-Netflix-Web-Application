@@ -18,14 +18,22 @@
       <div class="show-text-sci">
         <!-- <span>--------------------------------------------------</span> -->
         <p>
-          <p-bold>Title:</p-bold>&emsp;{{ tvshow.title }}
+          <p-bold>Title:</p-bold> {{ tvshow.title }}
           <p-bold>({{ tvshow.release_year }})</p-bold>
-          <p-bold>[INSERT MOVIE RATING]</p-bold>
+          <p-bold>[{{ rating.acronym }}]</p-bold>
         </p>
-        <p><p-bold>Genres:</p-bold> [INSERT MOVIE GENRES]</p>
-        <p><p-bold>Countries:</p-bold> [INSERT MOVIE COUNTRIES]</p>
-        <p><p-bold>Duration:</p-bold>&emsp;{{ tvshow.duration }}</p>
-        <p><p-bold>Description:</p-bold>&emsp;{{ tvshow.description }}</p>
+        <p>
+          <p-bold>Genre(s):</p-bold>
+          {{ genres[0].name }} {% for genre in genres[1:] %} | {{ genre.name }}
+          {% endfor %}
+        </p>
+        <p>
+          <p-bold>Countries:</p-bold>
+          {{ countries[0].name }} {% for country in countries[1:] %} | {{
+          country.name }} {% endfor %}
+        </p>
+        <p><p-bold>Duration:</p-bold> {{ tvshow.duration }}</p>
+        <p><p-bold>Description:</p-bold> {{ tvshow.description }}</p>
       </div>
     </div>
   </div>
@@ -40,6 +48,7 @@
         .table {
           display: inline-block !important;
           width: fit-content !important;
+          max-height: 80% !important;
           height: 80% !important;
           padding-bottom: auto !important;
           margin: 15px auto 25px auto !important;
@@ -60,7 +69,10 @@
       </section>
 
       <main class="table">
-        <section class="table__header" style="height: 50px">
+        <section
+          class="table__header"
+          style="height: 50px; max-height: 200px"
+        >
           <h1 align="center">Movie Actors</h1>
         </section>
         <section class="table__body">

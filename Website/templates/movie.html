@@ -9,6 +9,13 @@
 
 <section class="show-desc" id="show-desc">
   <div class="show-container">
+    <style>
+      .show-container {
+        background: url("/static/assets/Background_RedMountains.jpg") no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+      }
+    </style>
     <div class="show-content">
       <h2 class="show-logo">
         <i class="bx bx-camera-movie"></i> {{ movie.title }}<br />
@@ -18,14 +25,22 @@
       <div class="show-text-sci">
         <!-- <span>--------------------------------------------------</span> -->
         <p>
-          <p-bold>Title:</p-bold>&emsp;{{ movie.title }}
+          <p-bold>Title:</p-bold> {{ movie.title }}
           <p-bold>({{ movie.release_year }})</p-bold>
-          <p-bold>[INSERT MOVIE RATING]</p-bold>
+          <p-bold>[{{ rating.acronym }}]</p-bold>
         </p>
-        <p><p-bold>Genres:</p-bold> [INSERT MOVIE GENRES]</p>
-        <p><p-bold>Countries:</p-bold> [INSERT MOVIE COUNTRIES]</p>
-        <p><p-bold>Duration:</p-bold>&emsp;{{ movie.duration }}</p>
-        <p><p-bold>Description:</p-bold>&emsp;{{ movie.description }}</p>
+        <p>
+          <p-bold>Genre(s):</p-bold>
+          {{ genres[0].name }} {% for genre in genres[1:] %} | {{ genre.name }}
+          {% endfor %}
+        </p>
+        <p>
+          <p-bold>Countries:</p-bold>
+          {{ countries[0].name }} {% for country in countries[1:] %} | {{
+          country.name }} {% endfor %}
+        </p>
+        <p><p-bold>Duration:</p-bold> {{ movie.duration }}</p>
+        <p><p-bold>Description:</p-bold> {{ movie.description }}</p>
       </div>
     </div>
   </div>
@@ -39,8 +54,10 @@
       <style>
         .table {
           display: inline-block !important;
-          width: fit-content !important;
-          height: 80% !important;
+          /* width: fit-content !important; */
+          width: auto !important;
+          max-height: 90% !important;
+          /* height: 80% !important; */
           padding-bottom: auto !important;
           margin: 15px auto 25px auto !important;
           margin-inline: 15px !important;
@@ -48,7 +65,7 @@
           background-color: transparent !important;
           outline: none !important;
           box-shadow: none !important;
-          overflow: hidden !important;
+          /* overflow: hidden !important; */
         }
       </style>
 
@@ -61,7 +78,7 @@
 
       <main class="table">
         <section class="table__header" style="height: 50px">
-          <h1 align="center">Movie Actors</h1>
+          <h1 align="center">Actor(s)</h1>
         </section>
         <section class="table__body">
           <table>
@@ -90,7 +107,7 @@
       {% endif %} {% if n_directors > 0 %}
       <main class="table">
         <section class="table__header" style="height: 50px">
-          <h1 align="center">Directors</h1>
+          <h1 align="center">Director(s)</h1>
         </section>
 
         <section class="table__body">

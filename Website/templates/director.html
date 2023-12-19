@@ -1,54 +1,126 @@
 {% extends "base.html" %} {% block content %}
-<body>
-  <h1>{% block title %}{{ director.name }} {% endblock %}</h1>
-  <h2>Person info</h2>
 
-  <p><b>PersonId: </b>{{ director.person_id }}</p>
-  <p><b>Name: </b>{{ director.name }}</p>
+<head>
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+</head>
 
-  {% if n_movies > 0 %}
-  <h2>Movies Involved</h2>
-  <table>
-    <tr>
-      <th><b>Id</b></th>
-      <th><b>Name</b></th>
-      <th><b>Year</b></th>
-      <th><b>Duration</b></th>
-    </tr>
-    {% for movie in productions_movies %}
-    <tr>
-      </td>
-      <td><a style="color: #792727" href="/movies/{{ movie.show_id }}"
-        >{{ movie.show_id }}</a</td>
-      <td>{{ movie.title }}</td>
-      <td>{{ movie.release_year }}</td>
-      <td>{{ movie.duration }}</td>
-    </tr>
-    {% endfor %}
-  </table>
-  {% endif %}
+<section class="show-desc" id="show-desc">
+  <div class="show-container">
+    <style>
+      .show-container {
+        background: url("/static/assets/Background_Sunset.jpg") no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+      }
+    </style>
+    <div class="show-content">
+      <h2 class="show-logo">
+        <i class="bx bxs-user-detail"></i> {{ director.name }}<br />
+        [ID {{ director.person_id }}]
+      </h2>
+    </div>
+  </div>
+</section>
 
-  {% if n_tvshows > 0 %}
-  <h2>TV Shows Involved</h2>
-  <table>
-      <tr>
-        <th><b>Id</b></th>
-        <th><b>Name</b></th>
-        <th><b>Year</b></th>
-        <th><b>Duration</b></th>
-      </tr>
-      {% for tvshow in productions_tvshows %}
-      <tr>
-        </td>
-        <td><a style="color: #792727" href="/tvshows/{{ tvshow.entertainment_id }}"
-          >{{ tvshow.entertainment_id }}</a</td>
-        <td>{{ tvshow.title }}</td>
-        <td>{{ tvshow.release_year }}</td>
-        <td>{{ tvshow.duration }}</td>
-      </tr>
-      {% endfor %}
-    </table>
-  {% endif %}
+<section class="show-staff" id="show-staff">
+  {% if n_results > 0 %}
+  <div class="people-details">
+    <main class="table">
+      <style>
+        .table {
+          display: inline-block !important;
+          width: fit-content !important;
+          max-width: 80% !important;
+          height: 80% !important;
+          max-height: 90% !important;
+          padding-bottom: auto !important;
+          margin: 15px auto 25px auto !important;
+          margin-inline: 15px !important;
+          /* align-content: right !important; */
+          background-color: transparent !important;
+          outline: none !important;
+          box-shadow: none !important;
+          /* overflow: hidden !important; */
+        }
+      </style>
 
-  {% endblock %}
-</body>
+      <section
+        class="table__header"
+        style="background-color: maroon; height: 50px"
+      >
+        <h1 align="center">Productions Involved</h1>
+      </section>
+
+      {% if n_movies > 0 %}
+      <main class="table">
+        <section class="table__header" style="height: 50px">
+          <h1 align="center">Movie(s)</h1>
+        </section>
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Id</b></th>
+                <th><b>Title</b></th>
+                <th><b>Year</b></th>
+                <th><b>Duration</b></th>
+              </tr>
+            </thead>
+
+            {% for movie in productions_movies %}
+            <tbody>
+              <tr>
+                <td>
+                  <a href="/movies/{{ movie.show_id }}">{{ movie.show_id }}</a>
+                </td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.release_year }}</td>
+                <td>{{ movie.duration }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </section>
+      </main>
+      {% endif %} {% if n_tvshows > 0 %}
+      <main class="table">
+        <section class="table__header" style="height: 50px">
+          <h1 align="center">TV Show(s)</h1>
+        </section>
+
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Id</b></th>
+                <th><b>Name</b></th>
+                <th><b>Year</b></th>
+                <th><b>Duration</b></th>
+              </tr>
+            </thead>
+
+            {% for tvshow in productions_tvshows %}
+            <tbody>
+              <tr>
+                <td>
+                  <a href="/tvshows/{{ tvshow.show_id }}"
+                    >{{ tvshow.show_id }}</a
+                  >
+                </td>
+                <td>{{ tvshow.title }}</td>
+                <td>{{ tvshow.release_year }}</td>
+                <td>{{ tvshow.duration }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </section>
+      </main>
+    </main>
+  </div>
+  {% endif %} {% endif %}
+</section>
+{% endblock %}
