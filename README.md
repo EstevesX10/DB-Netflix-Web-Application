@@ -31,7 +31,7 @@ sudo apt-get install python3 python3-pip
 ## Bibliotecas Python
 
 ```
-pip3 install --user Flask==1.1.4 PyMySQL==1.0.2 cryptography==36.0.0 markupsafe==2.0.1
+pip install -r requirements.txt
 ```
 
 # Execução
