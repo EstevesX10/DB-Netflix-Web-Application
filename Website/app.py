@@ -233,16 +233,17 @@ def get_movie(id):
   ''', [id]).fetchone()
 
   if (movie is None):
-    abort(404, 'Movie id {} does not exist.'.format(id))
+    abort(404, 'Show id {} does not exist.'.format(id))
 
   rating = db.execute('''
     SELECT r.acronym
-    FROM Show s NATURAL JOIN Rating r
+    FROM Show s JOIN Rating r
+    ON (s.rating_id=r.rating_id)
     WHERE s.show_id = ?
     ''', [id]).fetchone()
 
-  # if (rating is None):
-  #   abort(404, 'Movie id {} does not have a rating.'.format(id))
+  if (rating is None):
+    abort(404, 'Show id {} does not have a rating.'.format(id))
 
   genres = db.execute('''
   SELECT g.name
@@ -252,8 +253,8 @@ def get_movie(id):
   ORDER BY g.name;
   ''', [id]).fetchall()
 
-  # if (genres is None):
-  #   abort(404, 'Movie id {} does not have genres.'.format(id))
+  if (genres is None):
+    abort(404, 'Show id {} does not have genres.'.format(id))
 
   countries = db.execute('''
   SELECT c.name
@@ -263,8 +264,8 @@ def get_movie(id):
   ORDER BY c.name;
   ''', [id]).fetchall()
 
-  # if (countries is None):
-  #   abort(404, 'Movie id {} does not have countries.'.format(id))
+  if (countries is None):
+    abort(404, 'Show id {} does not have countries.'.format(id))
 
   actors = db.execute('''
   SELECT p.person_id, p.name
@@ -275,7 +276,7 @@ def get_movie(id):
   ''', [id]).fetchall()
 
   if (actors is None):
-    abort(404, 'Movie id {} does not have actors.'.format(id))
+    abort(404, 'Show id {} does not have actors.'.format(id))
   
   directors = db.execute('''
   SELECT p.person_id, p.name
@@ -286,7 +287,7 @@ def get_movie(id):
   ''', [id]).fetchall()
 
   if (directors is None):
-    abort(404, 'Movie id {} does not have directors.'.format(id))
+    abort(404, 'Show id {} does not have directors.'.format(id))
 
   return render_template('movie.html',
                          movie=movie,
@@ -341,12 +342,13 @@ def get_tvshow(id):
 
   rating = db.execute('''
     SELECT r.acronym
-    FROM Show s NATURAL JOIN Rating r
+    FROM Show s JOIN Rating r
+    ON (s.rating_id=r.rating_id)
     WHERE s.show_id = ?
     ''', [id]).fetchone()
 
-  # if (rating is None):
-  #   abort(404, 'Movie id {} does not have a rating.'.format(id))
+  if (rating is None):
+    abort(404, 'Show id {} does not have a rating.'.format(id))
 
   genres = db.execute('''
   SELECT g.name
@@ -356,8 +358,8 @@ def get_tvshow(id):
   ORDER BY g.name;
   ''', [id]).fetchall()
 
-  # if (genres is None):
-  #   abort(404, 'Movie id {} does not have genres.'.format(id))
+  if (genres is None):
+    abort(404, 'Show id {} does not have genres.'.format(id))
 
   countries = db.execute('''
   SELECT c.name
@@ -367,11 +369,15 @@ def get_tvshow(id):
   ORDER BY c.name;
   ''', [id]).fetchall()
 
+  if (countries is None):
+    abort(404, 'Show id {} does not have countries.'.format(id))
+
+
   actors = db.execute('''
   SELECT p.person_id, p.name
   FROM Show_Person_Job spj JOIN Job j JOIN Person p JOIN Show s JOIN Type t
   ON (spj.person_id = p.person_id AND spj.job_id = j.job_id AND spj.show_id = s.show_id AND s.type_id = t.type_id)
-  WHERE t.type = 'Tv Show' AND spj.show_id = ? AND j.name = 'cast'
+  WHERE t.type = 'TV Show' AND spj.show_id = ? AND j.name = 'cast'
   ORDER by p.name;
   ''', [id]).fetchall()
 
@@ -382,7 +388,7 @@ def get_tvshow(id):
   SELECT p.person_id, p.name
   FROM Show_Person_Job spj JOIN Job j JOIN Person p JOIN Show s JOIN Type t
   ON (spj.person_id = p.person_id AND spj.job_id = j.job_id AND spj.show_id = s.show_id AND s.type_id = t.type_id)
-  WHERE t.type = 'Tv Show' AND spj.show_id = ? AND j.name = 'director'
+  WHERE t.type = 'TV Show' AND spj.show_id = ? AND j.name = 'director'
   ORDER by p.name;
   ''', [id]).fetchall()
 
@@ -459,7 +465,8 @@ def get_actor(id):
                          n_movies=len(productions_movies),
                          productions_movies=productions_movies,
                          n_tvshows=len(productions_tvshows),
-                         productions_tvshows=productions_tvshows)
+                         productions_tvshows=productions_tvshows,
+                         n_results=len(productions_movies) + len(productions_tvshows))
 
 # -----------------------------------------------------------------------------------------------
 
@@ -521,7 +528,8 @@ def get_director(id):
                          n_movies=len(productions_movies),
                          productions_movies=productions_movies,
                          n_tvshows=len(productions_tvshows),
-                         productions_tvshows=productions_tvshows)
+                         productions_tvshows=productions_tvshows,
+                         n_results=(len(productions_movies) + len(productions_tvshows)))
 
 # -----------------------------------------------------------------------------------------------
 
@@ -571,7 +579,7 @@ def search(input_search):
           SELECT p.person_id, p.name
           FROM Person p JOIN Show_Person_Job spj JOIN Job j
           ON (p.person_id=spj.person_id AND spj.job_id=j.job_id)
-          WHERE p.name LIKE :search_term AND j.name='cast'
+          WHERE p.name LIKE :search_term AND j.name='director'
           ORDER BY p.name;'''
   
   directors_results = db.execute(director_query, {"search_term": input_search_with_wildcards}).fetchall()
