@@ -7,8 +7,8 @@ Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base 
 
 ### Python 3 e pip 
 
-Deve ter o Python 3 e o gestor de pacotes pip instalado. Pode
-instalar os mesmos em Ubuntu por exemplo usando:
+Deve utilizar o Python 3 e o gestor de pacotes pip. Estes podem ser
+instalados [em Ubuntu] através:
 
 ```
 sudo apt-get install python3 python3-pip
