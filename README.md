@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ## Execução
 
 Inicie a aplicação executando `python3 server.py` e interaja com a mesma
-abrindo uma janela no seu browser  com o endereço [__http://localhost:9001/__](http://localhost:9001/) 
+abrindo uma janela no seu browser  com o endereço [__http://127.0.0.1:9001/__](http://127.0.0.1:9001/) 
 
 ##  Referências
 
