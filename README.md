@@ -1,7 +1,7 @@
 # Netflix Web Application [DataBases UC Project]
 
 ## Descrição
-Aplicação Web para o acesso de dados dos Shows da Netflix presentes em uma Base de Dados
+Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
 
 ## Dependências
 
