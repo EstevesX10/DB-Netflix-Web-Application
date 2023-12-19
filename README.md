@@ -1,7 +1,7 @@
 # Netflix Web Application [DataBases UC Project]
 
 ## Descrição
-Projeto de Base de Dados com o intuito de desenvolver uma Aplicação Web para o acesso de informação relativa aos Shows da Nertflix
+Aplicação Web para o acesso de dados dos Shows da Netflix presentes em uma Base de Dados
 
 ## Dependências
 
