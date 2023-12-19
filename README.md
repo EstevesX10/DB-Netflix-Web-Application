@@ -36,7 +36,7 @@ abrindo uma janela no seu browser  com o endereço [__http://localhost:9001/__](
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 - [Jinja templates](https://jinja.palletsprojects.com/en/3.0.x/)
 
-### Autores:
+## Autores:
 - [Gonçalo Martins Esteves](link), DCC/FCUP
 - [Nuno Gomes](link), DCC/FCUP
 
