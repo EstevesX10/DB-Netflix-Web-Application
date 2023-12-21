@@ -209,7 +209,7 @@ def get_shows_ratings(id):
 # Movies - Listing all entries
 
 @APP.route('/movies/P<int:page_number>')
-def list_movies(page_number=1):
+def list_movies(page_number):
   size = 1000
   start_limit = (page_number - 1) * size
   end_limit = (page_number) * size
