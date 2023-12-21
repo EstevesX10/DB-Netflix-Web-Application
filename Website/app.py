@@ -419,15 +419,20 @@ def get_tvshow(id):
 
 # Actors - Listing all entries
 
-@APP.route('/actors/')
-def list_actors(): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
+@APP.route('/actors/P<int:page_number>')
+def list_actors(page_number=1): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
+  size = 4400
+  start_limit = (page_number - 1) * size
+  end_limit = (page_number) * size
+  
   actors = db.execute('''
   SELECT DISTINCT p.person_id, p.name
   FROM Show_Person_Job spj JOIN Person p JOIN Job j
   ON (spj.person_id = p.person_id AND spj.job_id = j.job_id)
   WHERE j.name = 'cast'
-  ORDER by p.name;
-  ''').fetchall()
+  ORDER by p.name
+  LIMIT ?, ?;
+  ''', [start_limit, end_limit]).fetchall()
 
   return render_template('list_actors.html',
                          actors=actors)

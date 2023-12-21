@@ -1,7 +1,7 @@
 /* 
-# ---------- #
-| Pagination |
-# ---------- #
+# ------------------------ #
+| Pagination - List Movies |
+# ------------------------ #
 */
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -14,15 +14,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Global variables
     let currentValue = determineInitialPage();
-    let links = document.getElementsByClassName('link');
+    let links = document.getElementsByClassName('linkMovie');
 
     // Function to update active link
-    function updateActiveLink() {
+    function updateActiveLinkMovie() {
         Array.from(links).forEach(link => link.classList.remove('active'));
         links[currentValue - 1].classList.add('active');
     }
 
-    function activeLink(event) {
+    function activeLinkMovie(event) {
         let page = parseInt(event.currentTarget.getAttribute('data-value'));
 
         // Check if the page number is valid and exists
@@ -32,37 +32,104 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         currentValue = page;
-        updateActiveLink();
+        updateActiveLinkMovie();
         window.location.href = '/movies/P' + page; // Redirect to the new page
     }
 
     // Attach event listeners to pagination links
     Array.from(links).forEach(link => {
-        link.addEventListener('click', activeLink);
+        link.addEventListener('click', activeLinkMovie);
     });
 
-    function backBtn() {
+    function backBtnMovie() {
         if (currentValue > 1) {
             currentValue--;
-            updateActiveLink();
+            updateActiveLinkMovie();
             window.location.href = '/movies/P' + currentValue; // Redirect to the new page
         }
     }
     
-    function nextBtn() {
+    function nextBtnMovie() {
         if (currentValue < links.length) {
             currentValue++;
-            updateActiveLink();
+            updateActiveLinkMovie();
             window.location.href = '/movies/P' + currentValue; // Redirect to the new page
         }
     }
 
     // Attach event listeners to buttons
-    document.getElementById('btn1').addEventListener('click', backBtn);
-    document.getElementById('btn2').addEventListener('click', nextBtn);
+    document.getElementById('btn1Movie').addEventListener('click', backBtnMovie);
+    document.getElementById('btn2Movie').addEventListener('click', nextBtnMovie);
 
     // Update the active link initially
-    updateActiveLink();
+    updateActiveLinkMovie();
+});
+
+/* 
+# ------------------------ #
+| Pagination - List Actors |
+# ------------------------ #
+*/
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Function to determine the initial page based on the URL
+    function determineInitialPage() {
+        let currentPath = window.location.pathname;
+        let match = currentPath.match(/\/actors\/P(\d+)/);
+        return match ? parseInt(match[1], 10) : 1;
+    }
+
+    // Global variables
+    let currentValue = determineInitialPage();
+    let links = document.getElementsByClassName('linkActor');
+
+    // Function to update active link
+    function updateActiveLinkActor() {
+        Array.from(links).forEach(link => link.classList.remove('active'));
+        links[currentValue - 1].classList.add('active');
+    }
+
+    function activeLinkActor(event) {
+        let page = parseInt(event.currentTarget.getAttribute('data-value'));
+
+        // Check if the page number is valid and exists
+        if (!page || page < 1 || page > links.length) {
+            console.error('Invalid page number:', page);
+            return; // Do nothing if the page number is invalid
+        }
+
+        currentValue = page;
+        updateActiveLinkActor();
+        window.location.href = '/actors/P' + page; // Redirect to the new page
+    }
+
+    // Attach event listeners to pagination links
+    Array.from(links).forEach(link => {
+        link.addEventListener('click', activeLinkActor);
+    });
+
+    function backBtnActor() {
+        if (currentValue > 1) {
+            currentValue--;
+            updateActiveLinkActor();
+            window.location.href = '/actors/P' + currentValue; // Redirect to the new page
+        }
+    }
+    
+    function nextBtnActor() {
+        if (currentValue < links.length) {
+            currentValue++;
+            updateActiveLinkActor();
+            window.location.href = '/actors/P' + currentValue; // Redirect to the new page
+        }
+    }
+
+    // Attach event listeners to buttons
+    document.getElementById('btn1Actor').addEventListener('click', backBtnActor);
+    document.getElementById('btn2Actor').addEventListener('click', nextBtnActor);
+
+    // Update the active link initially
+    updateActiveLinkActor();
 });
 
 /* 
