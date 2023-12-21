@@ -215,7 +215,8 @@ header {
     display: flex;
     width: 80%;
     height: 5%;
-    margin-top: 5%;
+    margin-top: 3%;
+    margin-left: 10%;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.2);
@@ -232,6 +233,13 @@ header {
 
 .pagination ul {
     margin: 20px 30px;
+}
+
+.pagination ul li a{
+    color: #e4e4e4;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .pagination ul li{
