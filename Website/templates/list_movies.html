@@ -41,5 +41,30 @@
       </table>
     </section>
   </main>
+
+  <div class="pagination-container">
+    <div class="pagination">
+      <button class="btn1" onclick="backBtn()">
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Farrow-png-transparent-11.png&f=1&nofb=1&ipt=4c43d03fa196be91c23ae9eb1dcf13bdeddbdf342ce7811ee135d644818a5ed3&ipo=images"
+        />
+        prev
+      </button>
+      <ul>
+        <li class="link active" value="1" onclick="activeLink()">1</li>
+        <li class="link" value="2" onclick="activeLink()">2</li>
+        <li class="link" value="3" onclick="activeLink()">3</li>
+        <li class="link" value="4" onclick="activeLink()">4</li>
+        <li class="link" value="5" onclick="activeLink()">5</li>
+        <li class="link" value="6" onclick="activeLink()">6</li>
+      </ul>
+      <button class="btn2" onclick="nextBtn()">
+        next
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Farrow-png-transparent-11.png&f=1&nofb=1&ipt=4c43d03fa196be91c23ae9eb1dcf13bdeddbdf342ce7811ee135d644818a5ed3&ipo=images"
+        />
+      </button>
+    </div>
+  </div>
 </body>
 {% endblock %}
