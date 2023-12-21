@@ -242,6 +242,11 @@ header {
     text-decoration: none;
 }
 
+.pagination ul li a:hover{
+    color: #ad3c3c;
+    font-weight: bold;
+}
+
 .pagination ul li{
     display: inline-block;
     margin: 0 10px;
@@ -259,7 +264,9 @@ header {
 
 .pagination ul li.active {
     color: #fff;
-    background-image: linear-gradient(#ad3c3c,#ad3c3c);
+    /* background-image: linear-gradient(#eb9191,#ad3c3c); */
+    /* background-image: linear-gradient(#eb9191,transparent); */
+    background-image: linear-gradient(transparent, #eb9191);
     background-repeat: no-repeat;
     background-position: 0 0;
 }
