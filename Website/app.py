@@ -208,16 +208,20 @@ def get_shows_ratings(id):
 
 # Movies - Listing all entries
 
-@APP.route('/movies/')
-def list_movies(): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
+@APP.route('/movies/P<int:page_number>')
+def list_movies(page_number=1):
+  size = 1000
+  start_limit = (page_number - 1) * size
+  end_limit = (page_number) * size
+  
   movies = db.execute(
     '''
     SELECT s.show_id, s.title, s.release_year, s.duration
     FROM Show s NATURAL JOIN Type t
     WHERE t.type = 'Movie'
     ORDER by s.title
-    LIMIT 1000;
-    ''').fetchall()
+    LIMIT ?, ?;
+    ''', [start_limit, end_limit]).fetchall()
   
   return render_template('list_movies.html', movies=movies)
 
