@@ -212,10 +212,10 @@ header {
 */
 
 .pagination-container {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(45deg, #410358, #4700bc);
     display: flex;
+    width: 80%;
+    height: 5%;
+    margin-top: 5%;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.2);
@@ -224,8 +224,8 @@ header {
 .pagination {
     display: flex;
     align-items: center;
-    background: #fff;
-    color: #383838;
+    background: transparent;
+    color: #e4e4e4;
     padding: 10px 40px;
     border-radius: 6px;
 }
@@ -237,13 +237,13 @@ header {
 .pagination ul li{
     display: inline-block;
     margin: 0 10px;
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 3%;
     border-radius: 50%;
     text-align: center;
     font-size: 22px;
     font-weight: 500;
-    line-height: 45px;
+    line-height: 35px;
     cursor: pointer;
     background-position: 0 -45px;
     transition: background-position 0.5s ease-in-out
@@ -251,7 +251,7 @@ header {
 
 .pagination ul li.active {
     color: #fff;
-    background-image: linear-gradient(#ff4568,#ff4568);
+    background-image: linear-gradient(#ad3c3c,#ad3c3c);
     background-repeat: no-repeat;
     background-position: 0 0;
 }
@@ -261,7 +261,7 @@ header {
     align-items: center;
     font-size: 22px;
     font-weight: 500;
-    color: #383838;
+    color: #e4e4e4;
     background: transparent;
     outline: none;
     border: none;
