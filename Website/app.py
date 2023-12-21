@@ -216,7 +216,7 @@ def list_movies(): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
     FROM Show s NATURAL JOIN Type t
     WHERE t.type = 'Movie'
     ORDER by s.title
-    LIMIT 100;
+    LIMIT 1000;
     ''').fetchall()
   
   return render_template('list_movies.html', movies=movies)
@@ -319,7 +319,7 @@ def list_tvshows():
     FROM Show s NATURAL JOIN Type t
     WHERE t.type = 'TV Show'
     ORDER by s.title
-    LIMIT 100;
+    LIMIT 1000;
     ''').fetchall()
 
   # ADD EXTRA INFO TO THE TV SHOW
