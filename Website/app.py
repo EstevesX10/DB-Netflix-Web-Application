@@ -426,8 +426,7 @@ def list_actors(): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
   FROM Show_Person_Job spj JOIN Person p JOIN Job j
   ON (spj.person_id = p.person_id AND spj.job_id = j.job_id)
   WHERE j.name = 'cast'
-  ORDER by p.name
-  LIMIT 100;
+  ORDER by p.name;
   ''').fetchall()
 
   return render_template('list_actors.html',
@@ -489,8 +488,7 @@ def list_directors(): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
   FROM Show_Person_Job spj JOIN Person p JOIN Job j
   ON (spj.person_id = p.person_id AND spj.job_id = j.job_id)
   WHERE j.name = 'director'
-  ORDER by p.name
-  LIMIT 100;
+  ORDER by p.name;
   ''').fetchall()
 
   return render_template('list_directors.html',
