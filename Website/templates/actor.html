@@ -29,6 +29,22 @@
   {% if n_results > 0 %}
   <div class="people-details" style="margin-right: 0">
     <main class="table">
+      {% if n_results == 2 %}
+      <style>
+        .table {
+          display: inline-block !important;
+          width: auto !important;
+          max-height: 90% !important;
+          /* padding-bottom: auto !important; */
+          margin: 15px 0px 25px 0px !important;
+          /* margin-inline: 15px !important; */
+          align-content: right !important;
+          background-color: transparent !important;
+          outline: none !important;
+          box-shadow: none !important;
+        }
+      </style>
+      {% else %}
       <style>
         .table {
           display: inline-block !important;
@@ -43,6 +59,7 @@
           box-shadow: none !important;
         }
       </style>
+      {% endif %}
 
       <section
         class="table__header"
