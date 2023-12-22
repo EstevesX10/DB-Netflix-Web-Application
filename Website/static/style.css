@@ -401,6 +401,7 @@ main.table section.table__body:hover::-webkit-scrollbar-thumb {
 }
 
 main.table section.table__body table thead th {
+    position: sticky;
     top: 0;
     left: 0;
     color: #f2f2f2;
