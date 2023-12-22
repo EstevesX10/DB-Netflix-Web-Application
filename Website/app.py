@@ -573,7 +573,7 @@ def search(input_search):
 
   # Query to Search the Actors
   actor_query = '''
-          SELECT p.person_id, p.name
+          SELECT DISTINCT p.person_id, p.name
           FROM Person p JOIN Show_Person_Job spj JOIN Job j
           ON (p.person_id=spj.person_id AND spj.job_id=j.job_id)
           WHERE p.name LIKE :search_term AND j.name='cast'
@@ -583,7 +583,7 @@ def search(input_search):
   
   # Query to Search the Directors
   director_query = '''
-          SELECT p.person_id, p.name
+          SELECT DISTINCT p.person_id, p.name
           FROM Person p JOIN Show_Person_Job spj JOIN Job j
           ON (p.person_id=spj.person_id AND spj.job_id=j.job_id)
           WHERE p.name LIKE :search_term AND j.name='director'
