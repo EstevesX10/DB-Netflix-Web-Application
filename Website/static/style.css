@@ -302,12 +302,6 @@ header {
     # ----------------------------------------------------------------- #
 */
 
-.show-details { /* TO IMPLEMENT THE REST */
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
 .banner-no-results {
     display: flex;
     width: 100%;
@@ -347,7 +341,6 @@ main.table {
     box-shadow: 0 0.4rem .8rem #0005;
     border-radius: .8rem;
     overflow-y: hidden;
-    /* overflow: hidden; */
 }
 
 main.table section.table__header {
@@ -517,8 +510,6 @@ section.show-desc{
     font-weight: bold;
     text-indent: 6px;
 }
-
-/*  CORRECT BELLOW */
 
 section.show-desc h1 {
     font-size: 48px;
