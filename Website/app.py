@@ -456,7 +456,7 @@ def get_actor(id):
   SELECT DISTINCT s.show_id, s.title, s.release_year, s.duration
   FROM Show s JOIN Type t JOIN Show_Person_Job spj JOIN Job j JOIN Person p
   ON (spj.show_id = s.show_id AND spj.person_id = p.person_id AND spj.job_id = j.job_id AND s.type_id = t.type_id)
-  WHERE p.person_id = ? AND t.type = 'Movie'
+  WHERE p.person_id = ? AND t.type = 'Movie' AND j.name='cast'
   ORDER by s.title;      
   ''', [id]).fetchall()
 
@@ -464,7 +464,7 @@ def get_actor(id):
   SELECT DISTINCT s.show_id, s.title, s.release_year, s.duration
   FROM Show s JOIN Type t JOIN Show_Person_Job spj JOIN Job j JOIN Person p
   ON (spj.show_id = s.show_id AND spj.person_id = p.person_id AND spj.job_id = j.job_id AND s.type_id = t.type_id)
-  WHERE p.person_id = ? AND t.type = 'TV Show'
+  WHERE p.person_id = ? AND t.type = 'TV Show' AND j.name='cast'
   ORDER by s.title;
   ''', [id]).fetchall()
 
@@ -516,17 +516,17 @@ def get_director(id):
 
   productions_movies = db.execute('''
   SELECT DISTINCT s.show_id, s.title, s.release_year, s.duration
-  FROM Show s JOIN Person p JOIN Type t JOIN Show_Person_Job spj
-  ON (s.type_id = t.type_id AND spj.person_id = p.person_id AND spj.show_id = s.show_id)
-  WHERE p.person_id = ? AND t.type = 'Movie'
+  FROM Show s JOIN Person p JOIN Type t JOIN Show_Person_Job spj JOIN Job j
+  ON (s.type_id = t.type_id AND spj.person_id = p.person_id AND spj.show_id = s.show_id AND spj.job_id=j.job_id)
+  WHERE p.person_id = ? AND t.type = 'Movie' AND j.name = 'director'
   ORDER by s.title;      
   ''', [id]).fetchall()
 
   productions_tvshows = db.execute('''
   SELECT DISTINCT s.show_id, s.title, s.release_year, s.duration
-  FROM Show s JOIN Person p JOIN Type t JOIN Show_Person_Job spj
-  ON (s.type_id = t.type_id AND spj.person_id = p.person_id AND spj.show_id = s.show_id)
-  WHERE p.person_id = ? AND t.type = 'TV Show'
+  FROM Show s JOIN Person p JOIN Type t JOIN Show_Person_Job spj JOIN Job j
+  ON (s.type_id = t.type_id AND spj.person_id = p.person_id AND spj.show_id = s.show_id AND spj.job_id=j.job_id)
+  WHERE p.person_id = ? AND t.type = 'TV Show' AND j.name = 'director'
   ORDER by s.title;
   ''', [id]).fetchall()
 
