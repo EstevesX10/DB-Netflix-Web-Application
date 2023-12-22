@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 /* 
-# ------ #
-| Search |
-# ------ #
+# ------------------------------ #
+| Search Bar - Performing Search |
+# ------------------------------ #
 */
 
 function handleKeyPress(event) {
@@ -161,3 +161,53 @@ function performSearch() {
       window.location.href = newURL;
     }
 }
+
+/* 
+# ---------------------------- #
+| Search Bar - Styling Effects |
+# ---------------------------- #
+*/
+
+const searchBar = document.querySelector('.navigation .search-bar');
+let typingTimer;
+const doneTypingInterval = 500; // 0.5 seconds
+
+// Expand the search bar on focus
+document.getElementById('search-input').addEventListener('focus', () => {
+    searchBar.style.width = '400px';
+});
+
+// Contract the search bar on blur and remove inline style if not hovering
+document.getElementById('search-input').addEventListener('blur', () => {
+    if (!searchBar.matches(':hover')) {
+        searchBar.style.width = '30px';
+    }
+    setTimeout(() => { // Delay to check hover state after blur
+        if (!searchBar.matches(':hover')) {
+            searchBar.style.removeProperty('width');
+        }
+    }, 100);
+});
+
+// Handling typing
+document.getElementById('search-input').addEventListener('keyup', () => {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(doneTyping, doneTypingInterval);
+});
+
+document.getElementById('search-input').addEventListener('keydown', () => {
+    clearTimeout(typingTimer);
+});
+
+function doneTyping() {
+    if (!searchBar.matches(':hover')) {
+        searchBar.style.width = '30px';
+    }
+}
+
+// Remove inline style on mouseleave to enable hover effect in CSS
+searchBar.addEventListener('mouseleave', () => {
+    if (!searchBar.querySelector('input').matches(':focus')) {
+        searchBar.style.removeProperty('width');
+    }
+});
