@@ -298,7 +298,10 @@ header {
 
 /*
     # ----------------------------------------------------------------- #
-    | Table Styling - Listing of Movies, Tv Shows, Actors and Directors |
+    |                       Table Styling                               |
+    # ----------------------------------------------------------------- #
+    |          Listing < Movies | Tv Shows | Actors | Directors >       |
+    |   Also Used to List Results from a search (using the search bar)  |
     # ----------------------------------------------------------------- #
 */
 
@@ -329,12 +332,25 @@ header {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+/*
+    # ---------------------------------------------- #
+    | Movies / TVshows Individual Page - Staff Table |
+    # ---------------------------------------------- #
+*/
+
+.people-details {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    margin-right: -8%;
+    margin-left: auto;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
 main.table {
     width: auto;
     height: 500px;
-
     margin-top: 15%;
-
     border-collapse: collapse;
     background-color: #fff5;
     backdrop-filter: blur(7px);
@@ -422,9 +438,9 @@ main.table section.table__body table tbody tr:hover{
 }
 
 /*
-    # -------------------------------- #
-    | Movies / TVshows Individual Page |
-    # -------------------------------- #
+    # --------------------------------------------------- #
+    | Movies / TVshows Individual Page - Description Card |
+    # --------------------------------------------------- #
 */
 
 section.content {
@@ -531,12 +547,4 @@ section.show-staff {
     margin: 50px 0 50px 0;
     align-content: center;
     justify-content: right;
-}
-
-.people-details {
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    justify-content: center;
-    transform: translate(0%, 0%);
 }
