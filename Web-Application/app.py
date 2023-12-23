@@ -315,7 +315,7 @@ def get_movie(id):
 
 # TV Shows - Listing all entries
 
-@APP.route('/tvshows/') # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
+@APP.route('/tvshows/')
 def list_tvshows():
   tvshows = db.execute(
     '''
@@ -325,9 +325,7 @@ def list_tvshows():
     ORDER by s.title
     LIMIT 1000;
     ''').fetchall()
-
-  # ADD EXTRA INFO TO THE TV SHOW
-  
+    
   return render_template('list_tvshows.html', tvshows=tvshows)
 
 # TV Shows - People who were involved in a certain TvShow
@@ -376,7 +374,6 @@ def get_tvshow(id):
   if (countries is None):
     abort(404, 'Show id {} does not have countries.'.format(id))
 
-
   actors = db.execute('''
   SELECT p.person_id, p.name
   FROM Show_Person_Job spj JOIN Job j JOIN Person p JOIN Show s JOIN Type t
@@ -420,7 +417,7 @@ def get_tvshow(id):
 # Actors - Listing all entries
 
 @APP.route('/actors/P<int:page_number>')
-def list_actors(page_number=1): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
+def list_actors(page_number):
   size = 4400
   start_limit = (page_number - 1) * size
   end_limit = (page_number) * size
@@ -487,7 +484,7 @@ def get_actor(id):
 # Directors - Listing all entries
 
 @APP.route('/directors/')
-def list_directors(): # AMOUNT OF RESULTS CHANGED -> WAY TOO MANY DATA
+def list_directors():
   directors = db.execute('''
   SELECT DISTINCT p.person_id, p.name
   FROM Show_Person_Job spj JOIN Person p JOIN Job j
