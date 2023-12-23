@@ -546,7 +546,8 @@ def get_director(id):
 @APP.route('/search/<string:input_search>')
 def search(input_search):
   
-  input_search_with_wildcards = f"%{input_search}%"
+  # .rstrip() is used to remove the final whitespaces at the end of the string if exists
+  input_search_with_wildcards = f"%{input_search.rstrip()}%"
 
   # Query to Search the Movies
   movies_query = '''
