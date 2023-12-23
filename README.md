@@ -1,7 +1,10 @@
 # Netflix Web Application
 
-<p align="center" width="100%">
+<div style="text-align:center;">
+    <h1>Netflix Web Application</h1>
+</div>
 
+<p align="center" width="100%">
 <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="22%" />
 </p>
 
