@@ -1,9 +1,11 @@
 # Netflix Web Application
 
-<h1 style="text-align: center;">Netflix</h1>
+<div align="center">
+    <h1>Netflix</h1>
+</div>
 
 <p align="center" width="100%">
-<img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="22%" />
+    <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="22%" />
 </p>
 
 ## Descrição
