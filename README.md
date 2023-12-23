@@ -1,9 +1,9 @@
-<div style="text-align:center">
-
 # Netflix Web Application
 
+<p align="center" width="100%">
+
 <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="22%" />
-</div>
+</p>
 
 ## Descrição
 Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
