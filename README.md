@@ -1,7 +1,5 @@
-# Netflix Web Application
-
 <div align="center">
-    <h1>Netflix</h1>
+    <h1>Netflix Web Application</h1>
 </div>
 
 <p align="center" width="100%">
