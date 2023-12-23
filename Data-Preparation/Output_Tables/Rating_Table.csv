@@ -1,0 +1,15 @@
+rating_id,acronym,description
+0,G,General Audiences
+1,NC-17,No children under 17
+2,NR,Not Rated
+3,PG,Parental Guidance Suggested
+4,PG-13,"Parents Strongly Cautioned, Some Material May be Inappropriate for Children Under 13"
+5,R,Restricted [Requires accompanying parent or adult guardian]
+6,TV-14,This program contains material that most parents would find unsuitable for children under 14
+7,TV-G,General Audience
+8,TV-MA,Mature Audience Only
+9,TV-PG,Parental Guidance Suggested
+10,TV-Y,Appropriate for All Ages
+11,TV-Y7,Most Appropriate for Children age 7 and Up
+12,TV-Y7-FV,Contains <fantasy violence> that may be intense or combative than other TV-Y7 programs
+13,UR,Unrated
