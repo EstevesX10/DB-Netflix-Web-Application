@@ -3,7 +3,7 @@
 </div>
 
 <p align="center" width="100%">
-    <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="22%" />
+    <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="10%" />
 </p>
 
 ## Descrição
