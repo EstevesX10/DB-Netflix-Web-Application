@@ -1,5 +1,7 @@
 # Netflix Web Application [DataBases UC Project]
 
+![Netflix Logo](</Web-Application/static/assets/Netflix.gif>){height=400px width=500px}
+
 ## Descrição
 Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
 
