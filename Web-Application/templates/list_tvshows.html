@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content %}
+
+<body>
+  <main class="table" style="width: 755px">
+    <style>
+      .table {
+        margin: 60px auto 25px auto !important;
+        position: relative !important;
+        width: fit-content !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+      }
+    </style>
+    <section class="table__header">
+      <h1 align="center">TV Shows List</h1>
+    </section>
+
+    <section class="table__body">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+
+        {% for tvshow in tvshows %}
+        <tbody>
+          <tr>
+            <td>
+              <a href="/tvshows/{{ tvshow.show_id }}">{{ tvshow.show_id }}</a>
+            </td>
+            <td>{{ tvshow.title }}</td>
+            <td>{{ tvshow.release_year }}</td>
+            <td>{{ tvshow.duration }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </section>
+  </main>
+</body>
+{% endblock %}

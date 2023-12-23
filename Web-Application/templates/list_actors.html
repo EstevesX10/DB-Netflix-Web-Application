@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block content %}
+
+<body>
+  <main class="table" style="margin-top: 30%">
+    <style>
+      .table {
+        margin: 60px auto 25px auto !important;
+        position: relative !important;
+        width: fit-content !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+      }
+    </style>
+    <section class="table__header">
+      <h1 align="center">Actors List</h1>
+    </section>
+
+    <section class="table__body">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+
+        {% for actor in actors %}
+        <tbody>
+          <tr>
+            <td>
+              <a href="/actors/{{ actor.person_id }}">{{ actor.person_id }}</a>
+            </td>
+            <td>{{ actor.name }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </section>
+  </main>
+
+  <div class="pagination-container">
+    <div class="pagination">
+      <button class="btn1Actor" id="btn1Actor" onclick="backBtnActor()">
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Farrow-png-transparent-11.png&f=1&nofb=1&ipt=4c43d03fa196be91c23ae9eb1dcf13bdeddbdf342ce7811ee135d644818a5ed3&ipo=images"
+        />
+        prev
+      </button>
+      <ul>
+        <li class="linkActor active" value="1" onclick="activeLinkActor(event)">
+          <a href="/actors/P1">1</a>
+        </li>
+        <li class="linkActor" value="2" onclick="activeLinkActor(event)">
+          <a href="/actors/P2">2</a>
+        </li>
+        <li class="linkActor" value="3" onclick="activeLinkActor(event)">
+          <a href="/actors/P3">3</a>
+        </li>
+        <li class="linkActor" value="4" onclick="activeLinkActor(event)">
+          <a href="/actors/P4">4</a>
+        </li>
+        <li class="linkActor" value="5" onclick="activeLinkActor(event)">
+          <a href="/actors/P5">5</a>
+        </li>
+        <li class="linkActor" value="6" onclick="activeLinkActor(event)">
+          <a href="/actors/P6">6</a>
+        </li>
+      </ul>
+      <button class="btn2Actor" id="btn2Actor" onclick="nextBtnActor()">
+        next
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Farrow-png-transparent-11.png&f=1&nofb=1&ipt=4c43d03fa196be91c23ae9eb1dcf13bdeddbdf342ce7811ee135d644818a5ed3&ipo=images"
+        />
+      </button>
+    </div>
+  </div>
+</body>
+{% endblock %}

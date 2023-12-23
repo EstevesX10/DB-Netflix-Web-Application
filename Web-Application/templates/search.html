@@ -1,0 +1,174 @@
+{% extends "base.html" %} {% block content %} {% if n_results == 0 %}
+<div class="banner-no-results">
+  <img src="{{ url_for('static', filename='assets/No_Results.gif') }}" />
+</div>
+
+{% else %}
+
+<body>
+  <main class="table">
+    <style>
+      .content {
+        display: flex !important;
+        margin-top: 4% !important;
+        vertical-align: middle !important;
+        justify-content: center !important;
+      }
+
+      .table {
+        margin: 15px 15px 25px 15px !important;
+        width: fit-content !important;
+        align-content: center !important;
+        overflow: hidden !important;
+      }
+    </style>
+
+    <section
+      class="table__header"
+      style="background-color: maroon; height: 60px"
+    >
+      <h1 align="center">Results for '{{ input_search }}'</h1>
+    </section>
+
+    <section class="table__body">
+      <!-- MOVIES -->
+      {% if n_movies > 0 %}
+      <main class="table">
+        <section class="table__header">
+          <h1 align="center">Movie(s)</h1>
+        </section>
+
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Id</b></th>
+                <th><b>Title</b></th>
+                <th><b>Year</b></th>
+                <th><b>Duration</b></th>
+              </tr>
+            </thead>
+
+            {% for movie in movies_results %}
+            <tbody>
+              <tr>
+                <td>
+                  <a href="/movies/{{ movie.show_id }}">{{ movie.show_id }}</a>
+                </td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.release_year }}</td>
+                <td>{{ movie.duration }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </section>
+      </main>
+      {% endif %}
+
+      <!-- TV Shows -->
+      {% if n_tvshows > 0 %}
+      <main class="table">
+        <section class="table__header">
+          <h1 align="center">TV Show(s)</h1>
+        </section>
+
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Id</b></th>
+                <th><b>Title</b></th>
+                <th><b>Year</b></th>
+                <th><b>Duration</b></th>
+              </tr>
+            </thead>
+
+            {% for tvshow in tvshows_results %}
+            <tbody>
+              <tr>
+                <td>
+                  <a href="/tvshows/{{ tvshow.show_id }}"
+                    >{{ tvshow.show_id }}</a
+                  >
+                </td>
+                <td>{{ tvshow.title }}</td>
+                <td>{{ tvshow.release_year }}</td>
+                <td>{{ tvshow.duration }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </section>
+      </main>
+      {% endif %}
+
+      <!-- Actors -->
+      {% if n_actors > 0 %}
+      <main class="table">
+        <section class="table__header">
+          <h1 align="center">Actor(s)</h1>
+        </section>
+
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Id</b></th>
+                <th><b>Name</b></th>
+              </tr>
+            </thead>
+
+            {% for actor in actors_results %}
+            <tbody>
+              <tr>
+                <td>
+                  <a href="/actors/{{ actor.person_id }}"
+                    >{{ actor.person_id }}</a
+                  >
+                </td>
+                <td>{{ actor.name }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </section>
+      </main>
+      {% endif %}
+
+      <!-- Directors -->
+      {% if n_directors > 0 %}
+      <main class="table">
+        <section class="table__header">
+          <h1 align="center">Director(s)</h1>
+        </section>
+
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th><b>Id</b></th>
+                <th><b>Name</b></th>
+              </tr>
+            </thead>
+
+            {% for director in directors_results %}
+            <tbody>
+              <tr>
+                <td>
+                  <a href="/directors/{{ director.person_id }}"
+                    >{{ director.person_id }}</a
+                  >
+                </td>
+                <td>{{ director.name }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </section>
+      </main>
+      {% endif %}
+    </section>
+  </main>
+</body>
+{% endif %} {% endblock %}
