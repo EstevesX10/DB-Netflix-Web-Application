@@ -18,7 +18,7 @@ Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparati
 ### [Web-Application](/Web-Application/)
 No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis pela execução da Aplicação que, juntamente com a Base de Dados ( **Netflix.db** ) e os vários templates utilizados ( Presentes em [**templates**](/Web-Application/templates/) ) irão integrar a **Aplicação Web**.
 
-## Dependências
+## Pré-Requisitos
 
 De forma a conseguir executar e utilizar esta aplicação deve certificar-se que a sua máquina obedeça às seguintes **dependências**:
 
@@ -47,6 +47,10 @@ pip install -r requirements.txt
 Inicie a aplicação executando `python3 server.py` e interaja com a mesma
 abrindo uma janela no seu browser com o endereço [__http://127.0.0.1:9001/__](http://127.0.0.1:9001/).
 
+<p align="center" width="100%">
+    <img src="./Web-Application/static/assets/Home_Page.png"/>
+</p>
+
 #  Referências
 
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
@@ -55,4 +59,3 @@ abrindo uma janela no seu browser com o endereço [__http://127.0.0.1:9001/__](h
 # Autores:
 - [Gonçalo Martins Esteves](https://github.com/EstevesX10), DCC/FCUP
 - [Nuno Gomes](https://github.com/NightF0x26), DCC/FCUP
-
