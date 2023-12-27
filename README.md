@@ -6,21 +6,22 @@
     <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="10%" />
 </p>
 
-## Descrição
+## Descrição da Aplicação
 **Aplicação Web** para o acesso a dados dos *Shows* da Netflix a partir de uma Base de Dados.
 
-## Diretórios
+## Descrição dos Diretórios
+
 ### [Data-Preparation](/Data-Preparation/)
 No Diretório `Data-Preparation` encontram-se tanto o Dataset selecionado ( [**netflix_titles.csv**](/Data-Preparation/netflix_titles.csv) ) bem como o script ( [**Netflix DataSet - Data Preparation**](/Data-Preparation/Netflix%20DataSet%20-%20Data%20Preparation.ipynb) ) utilizado na criação e modelação da Base de Dados.
 
-Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram as várias tabelas ( já povoadas ) do modelo relacional  guardadas em **formato .csv**.
+Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram as várias tabelas ( **já povoadas** ) do modelo relacional,  guardadas em **formato .csv**.
 
 ### [Web-Application](/Web-Application/)
-No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis pela execução da Aplicação que, juntamente com a Base de Dados ( **Netflix.db** ) e os vários templates utilizados ( Presentes em [**templates**](/Web-Application/templates/) ) irão integrar a **Aplicação Web**.
+No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis pela execução da Aplicação que, juntamente com a Base de Dados ( **Netflix.db** ) e os vários templates utilizados ( Presentes em [**templates**](/Web-Application/templates/) ), irão integrar a **Aplicação Web**.
 
 ## Dependências / Pré-Requisitos
 
-De forma a conseguir executar e utilizar esta aplicação deve certificar-se que a sua máquina obedeça às seguintes **dependências**:
+De forma a conseguir executar e utilizar esta aplicação deve certificar-se que a sua máquina obedece às seguintes **dependências**:
 
 - [Python 3](#python3-e-pip)
 - [Gestor de Pacotes pip](#python3-e-pip)
@@ -42,6 +43,11 @@ Mais ainda, deve certificar-se que tem instalado as bibliotecas necessárias. Pa
 pip install -r requirements.txt
 ```
 
+####  Referências
+
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [Jinja templates](https://jinja.palletsprojects.com/en/3.0.x/)
+
 ## Execução
 
 Inicie a aplicação executando `python3 server.py` e interaja com a mesma
@@ -51,11 +57,6 @@ abrindo uma janela no seu browser com o endereço [__http://127.0.0.1:9001/__](h
     <img src="./Web-Application/static/assets/Home_Page.png"/>
 </p>
 
-#  Referências
-
-- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
-- [Jinja templates](https://jinja.palletsprojects.com/en/3.0.x/)
-
-# Autores:
+# Autores
 - [Gonçalo Martins Esteves](https://github.com/EstevesX10), DCC/FCUP
 - [Nuno Gomes](https://github.com/NightF0x26), DCC/FCUP
