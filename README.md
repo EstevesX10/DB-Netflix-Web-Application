@@ -14,7 +14,7 @@
 ### [Data-Preparation](/Data-Preparation/)
 No Diretório `Data-Preparation` encontram-se tanto o Dataset selecionado ( [**netflix_titles.csv**](/Data-Preparation/netflix_titles.csv) ) bem como o script ( [**Netflix DataSet - Data Preparation**](/Data-Preparation/Netflix%20DataSet%20-%20Data%20Preparation.ipynb) ) utilizado na criação e modelação da Base de Dados.
 
-Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram as várias tabelas ( **já povoadas** ) do modelo relacional,  guardadas em **formato .csv**.
+Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram guardadas ( em **formato .csv** ) as várias tabelas ( **já povoadas** ) do modelo relacional.
 
 ### [Web-Application](/Web-Application/)
 No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis pela execução da Aplicação que, juntamente com a Base de Dados ( **Netflix.db** ) e os vários templates utilizados ( Presentes em [**templates**](/Web-Application/templates/) ), irão integrar a **Aplicação Web**.
