@@ -18,7 +18,7 @@ Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparati
 ### [Web-Application](/Web-Application/)
 No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis pela execução da Aplicação que, juntamente com a Base de Dados ( **Netflix.db** ) e os vários templates utilizados ( Presentes em [**templates**](/Web-Application/templates/) ) irão integrar a **Aplicação Web**.
 
-## Pré-Requisitos
+## Dependências / Pré-Requisitos
 
 De forma a conseguir executar e utilizar esta aplicação deve certificar-se que a sua máquina obedeça às seguintes **dependências**:
 
