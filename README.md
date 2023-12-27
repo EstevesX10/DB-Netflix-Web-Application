@@ -10,9 +10,8 @@
 **Aplicação Web** para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
 
 ## Diretórios
-
 ### [Data-Preparation](/Data-Preparation/)
-No Diretório `Data-Preparation` encontram-se tanto o Dataset utilizado ( [**netflix_titles.csv**](/Data-Preparation/netflix_titles.csv) ) bem como o script ( [**Netflix DataSet - Data Preparation**](/Data-Preparation/Netflix%20DataSet%20-%20Data%20Preparation.ipynb) ) utilizado para a criação da Base de Dados.
+No Diretório `Data-Preparation` encontram-se tanto o Dataset selecionado ( [**netflix_titles.csv**](/Data-Preparation/netflix_titles.csv) ) bem como o script ( [**Netflix DataSet - Data Preparation**](/Data-Preparation/Netflix%20DataSet%20-%20Data%20Preparation.ipynb) ) utilizado na criação e modelação da Base de Dados.
 
 Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram as várias tabelas ( já povoadas ) do modelo relacional  guardadas em **formato .csv**
 
@@ -22,8 +21,12 @@ No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis 
 ## Dependências
 ### Python3 e pip 
 
-Deve utilizar o Python 3 e o gestor de pacotes pip. Estes podem ser
-instalados [em Ubuntu] através:
+Deve utilizar:
+- Python 3
+- Gestor de Pacotes pip
+- [Bibliotecas Python](###bibliotecas-python)
+
+Caso não tenha o Python 3 ou o ... instalados [em **Ubuntu**] pode fazê-lo através do comando:
 
 ```
 sudo apt-get install python3 python3-pip
