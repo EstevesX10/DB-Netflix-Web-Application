@@ -7,15 +7,17 @@
 </p>
 
 ## Descrição
-Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
+**Aplicação Web** para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
 
 ## Diretórios
 
 ### [Data-Preparation](/Data-Preparation/)
-Neste Diretório encontram-se tanto o Dataset utilizado ( ficheiro .csv ) bem como o script ( ficheiro .ipynb ) utilizado para a criação da Base de Dados. Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram várias tabelas do modelo relacional (já povoadas) guardadas em formato .csv
+No Diretório `Data-Preparation` encontram-se tanto o Dataset utilizado ( [**netflix_titles.csv**](/Data-Preparation/netflix_titles.csv) ) bem como o script ( [`Netflix DataSet - Data Preparation`](/Data-Preparation/Netflix%20DataSet%20-%20Data%20Preparation.ipynb) ) utilizado para a criação da Base de Dados.
+
+Mais ainda, este apresenta um outro diretório ( [Output_Tables](/Data-Preparation/Output_Tables/) ) onde se encontram as várias tabelas do modelo relacional (já povoadas) guardadas em **formato .csv**
 
 ### [Web-Application](/Web-Application/)
-No Diretório Web-Application encontram-se não só vários ficheiros responsáveis pela execução da Aplicação bem como a própria Base de Dados criada anteriormente e ainda outros diretórios onde se 
+No Diretório `Web-Application` encontram-se só vários ficheiros responsáveis pela execução da Aplicação que juntamente com a Base de Dados ( **Netflix.db** ) e os vários tempplates utilizados () irão integrar a Aplicação Web
 
 ## Dependências
 ### Python 3 e pip 
