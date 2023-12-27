@@ -43,7 +43,7 @@ Mais ainda, deve certificar-se que tem instalado as bibliotecas necessárias. Pa
 pip install -r requirements.txt
 ```
 
-####  Referências
+#### Referências das Bibliotecas
 
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 - [Jinja templates](https://jinja.palletsprojects.com/en/3.0.x/)
@@ -52,6 +52,8 @@ pip install -r requirements.txt
 
 Inicie a aplicação executando `python3 server.py` e interaja com a mesma
 abrindo uma janela no seu browser com o endereço [**http://127.0.0.1:9001/**](http://127.0.0.1:9001/).
+
+</br>
 
 <p align="center" width="100%">
     <img src="./Web-Application/static/assets/Home_Page.png"/>
