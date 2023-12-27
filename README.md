@@ -9,8 +9,15 @@
 ## Descrição
 Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base de Dados
 
-## Dependências
+## Diretórios
 
+### Web-Application
+HELLO THERE
+
+### Data-Preparation
+HELLO THERE
+
+## Dependências
 ### Python 3 e pip 
 
 Deve utilizar o Python 3 e o gestor de pacotes pip. Estes podem ser
@@ -21,6 +28,8 @@ sudo apt-get install python3 python3-pip
 ```
 
 ### Bibliotecas Python
+
+De forma a executar a aplicação deve certificar-se que tem instalado as bibliotecas necessárias. Para tal basta executar o comando:
 
 ```
 pip install -r requirements.txt
@@ -37,6 +46,6 @@ abrindo uma janela no seu browser  com o endereço [__http://127.0.0.1:9001/__](
 - [Jinja templates](https://jinja.palletsprojects.com/en/3.0.x/)
 
 ## Autores:
-- [Gonçalo Martins Esteves](link), DCC/FCUP
-- [Nuno Gomes](link), DCC/FCUP
+- [Gonçalo Martins Esteves](https://github.com/EstevesX10), DCC/FCUP
+- [Nuno Gomes](https://github.com/NightF0x26), DCC/FCUP
 
