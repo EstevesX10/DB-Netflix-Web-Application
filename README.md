@@ -51,12 +51,15 @@ pip install -r requirements.txt
 ## Execução
 
 Inicie a aplicação executando `python3 server.py` e interaja com a mesma
-abrindo uma janela no seu browser com o endereço [__http://127.0.0.1:9001/__](http://127.0.0.1:9001/).
+abrindo uma janela no seu browser com o endereço [**http://127.0.0.1:9001/**](http://127.0.0.1:9001/).
 
 <p align="center" width="100%">
     <img src="./Web-Application/static/assets/Home_Page.png"/>
 </p>
 
-# Autores
-- [Gonçalo Martins Esteves](https://github.com/EstevesX10), DCC/FCUP
-- [Nuno Gomes](https://github.com/NightF0x26), DCC/FCUP
+# Considerações Finais
+
+Se existir alguma **dificuldade** no download ou execução da aplicação não hesite em contactar-nos:
+- **Via email**: 
+    - [Gonçalo Esteves](https://github.com/EstevesX10) - `up202203947@up.pt`
+    - [Nuno Gomes](https://github.com/NightF0x26) - `up202206195@up.pt`
