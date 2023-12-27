@@ -11,11 +11,11 @@ Aplicação Web para o acesso a dados dos Shows da Netflix a partir de uma Base 
 
 ## Diretórios
 
-### Web-Application
-HELLO THERE
-
 ### Data-Preparation
-HELLO THERE
+Neste Diretório encontram-se tanto o Dataset utilizado (ficheiro .csv) bem como o script (ficheiro .ipynb) utilizado para a criação da Base de Dados. Mais ainda, este apresenta um outro diretório (Output_Tables) onde se encontram várias tabelas do modelo relacional (já povoadas) guardadas em formato .csv
+
+### Web-Application
+No Diretório Web-Application encontram-se vários ficheiros responsáveis pela execução da Aplicação.
 
 ## Dependências
 ### Python 3 e pip 
