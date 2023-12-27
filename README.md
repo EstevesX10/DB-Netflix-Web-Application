@@ -24,9 +24,9 @@ No Diretório `Web-Application` encontram-se os vários ficheiros responsáveis 
 Deve utilizar:
 - Python 3
 - Gestor de Pacotes pip
-- [Bibliotecas Python](###bibliotecas-python)
+- [Bibliotecas Python](#bibliotecas-python)
 
-Caso não tenha o Python 3 ou o ... instalados [em **Ubuntu**] pode fazê-lo através do comando:
+Caso não tenha o Python 3 ou o Gestor de Pacotes pip instalados pode fazê-lo [em **Ubuntu**] através do comando:
 
 ```
 sudo apt-get install python3 python3-pip
