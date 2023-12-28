@@ -496,12 +496,12 @@ section.show-desc{
 }
 
 .show-content .show-logo {
-    font-size: auto;
+    font-size: 20px;
     width: fit-content;
 }
 
 .show-content h2 i {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -519,11 +519,12 @@ section.show-desc{
 }
 
 .show-text-sci p {
-    font-size: 16px;
+    font-size: 14px;
     margin: 20px 0;
 }
 
 .show-text-sci p p-bold {
+    font-size: 14px;
     font-weight: bold;
     text-indent: 6px;
 }
