@@ -93,7 +93,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 100px;
+    top: 85px;
     width: 30px;
     height: 40px;
     background: #fff;
@@ -215,7 +215,7 @@ header {
     display: flex;
     width: 80%;
     height: 5%;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 10%;
     align-items: center;
     justify-content: center;
@@ -488,7 +488,7 @@ section.show-desc{
     width: 58%;
     height: 100%;
     background: transparent;
-    padding: 50px 80px 90px 80px;
+    padding: 0px 80px 90px 80px;
     color: #e4e4e4;
     display: flex;
     justify-content: space-between;
@@ -496,12 +496,13 @@ section.show-desc{
 }
 
 .show-content .show-logo {
-    font-size: auto;
+    padding-top: 50px;
+    font-size: 20px;
     width: fit-content;
 }
 
 .show-content h2 i {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -519,11 +520,12 @@ section.show-desc{
 }
 
 .show-text-sci p {
-    font-size: 16px;
+    font-size: 14px;
     margin: 20px 0;
 }
 
 .show-text-sci p p-bold {
+    font-size: 14px;
     font-weight: bold;
     text-indent: 6px;
 }
