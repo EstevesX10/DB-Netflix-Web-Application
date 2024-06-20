@@ -3,12 +3,18 @@
 </div>
 
 <p align="center" width="100%">
-    <img src="./Web-Application/static/assets/Netflix.gif" width="20%" height="10%" />
+    <img src="./Web-Application/static/assets/Netflix.gif" width="20%" height="20%" />
 </p>
 
 <div align="center">
     <a>
-        <img src="https://img.shields.io/badge/Made%20with-Python-BD162C?style=for-the-badge&logo=Python&logoColor=BD162C">
+        <img src="https://img.shields.io/badge/Made%20with-Python-BD162C?style=flat-square&logo=Python&logoColor=BD162C">
+    </a>
+    <a>
+        <img src="https://img.shields.io/badge/Made%20with-SQLite-BD162C?style=flat-square&logo=sqlite&logoColor=BD162C">
+    </a>
+    <a>
+        <img src="https://img.shields.io/badge/Made%20with-Flask-BD162C?style=flat-square&logo=flask&logoColor=BD162C">
     </a>
 </div>
 
@@ -28,6 +34,7 @@
         <img src="https://img.shields.io/badge/Dependencies-Requirements.txt-white?style=flat&logo=anaconda&logoColor=BD162C&logoSize=auto&color=BD162C"> 
     </a>
 </div>
+
 
 ## Descrição da Aplicação
 **Aplicação Web** para o acesso a dados dos *Shows* da Netflix a partir de uma Base de Dados.
