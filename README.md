@@ -3,8 +3,31 @@
 </div>
 
 <p align="center" width="100%">
-    <img src="./Web-Application/static/assets/Netflix.gif" width="15%" height="10%" />
+    <img src="./Web-Application/static/assets/Netflix.gif" width="20%" height="10%" />
 </p>
+
+<div align="center">
+    <a>
+        <img src="https://img.shields.io/badge/Made%20with-Python-BD162C?style=for-the-badge&logo=Python&logoColor=BD162C">
+    </a>
+</div>
+
+<br/>
+
+<div align="center">
+    <a href="https://github.com/EstevesX10/DB-Netflix-Web-Application/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/EstevesX10/DB-Netflix-Web-Application?style=flat&logo=gitbook&logoColor=BD162C&label=License&color=BD162C">
+    </a>
+    <a href="">
+        <img src="https://img.shields.io/github/repo-size/EstevesX10/DB-Netflix-Web-Application?style=flat&logo=googlecloudstorage&logoColor=BD162C&logoSize=auto&label=Repository%20Size&color=BD162C">
+    </a>
+    <a href="">
+        <img src="https://img.shields.io/github/stars/EstevesX10/DB-Netflix-Web-Application?style=flat&logo=adafruit&logoColor=BD162C&logoSize=auto&label=Stars&color=BD162C">
+    </a>
+    <a href="https://github.com/EstevesX10/DB-Netflix-Web-Application/blob/main/requirements.txt">
+        <img src="https://img.shields.io/badge/Dependencies-Requirements.txt-white?style=flat&logo=anaconda&logoColor=BD162C&logoSize=auto&color=BD162C"> 
+    </a>
+</div>
 
 ## Descrição da Aplicação
 **Aplicação Web** para o acesso a dados dos *Shows* da Netflix a partir de uma Base de Dados.
